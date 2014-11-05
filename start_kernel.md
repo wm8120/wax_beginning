@@ -34,25 +34,6 @@ start_kernel
 56 #endif
 ```
 
-|    | \# TO tag   | FROM | line | in file/text |
-|----|:-----------:|------|------|--------------|
-|     1  | 1  |send_sigio_to_task |  606  | fs/fcntl.c |
-|     2  | 1  |sigio_perm         | 553   |fs/fcntl.c |
-|     3  | 1  |rcu_read_lock      | 533   |fs/fcntl.c |
-|     4  | 1  |rcu_read_acquire   |   640 |  include/linux/rcupdate.h |
-|     5  | 2  |lock_acquire       |  238  | include/linux/rcupdate.h |
-|     6  | 1  |__lock_acquire     | 3554  | kernel/lockdep.c |
-|     7  | 1  |register_lock_class|  3041 |  kernel/lockdep.c |
-|     8  | 1  |look_up_lock_class |  724  | kernel/lockdep.c |
-|     9  |26  |dump_stack         | 669   |kernel/lockdep.c |
-|     10 | 10 | show_trace        | 195   |arch/x86/kernel/dumpstack.c |
-|     11 |  3 | show_trace_log_lvl| 172   |arch/x86/kernel/dumpstack.c |
-|     12 |  2 | dump_trace        | 166   |arch/x86/kernel/dumpstack.c |
-|     13 |  4 | touch_nmi_watchdog|    52 |  arch/x86/kernel/dumpstack_32.c |
-|     14 |  2 | touch_softlockup_watchdog |  165  | touch_softlockup_watchdog(); |
-
-The `watchdog` functions are unsured whether containing priviledge instructions.
-
 |    | \# TO tag | FROM | line | in file/text |
 |----|:---------:|-------------------|------|-------------|
 |1   | 1         |send_sigio_to_task | 606  | fs/fcntl.c |
